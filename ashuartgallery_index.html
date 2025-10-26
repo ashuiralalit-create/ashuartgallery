@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ashu Art Gallery — Original Handmade Art</title>
+  <meta name="description" content="Original handmade acrylic, watercolor and clay art by Ashu Kumari. Shop paintings and custom commissions." />
+  <style>
+    :root{--bg:#fbfbfb;--card:#ffffff;--muted:#666;--accent:#6aa6ff;--radius:14px}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:var(--bg);color:#111}
+    header{background:linear-gradient(90deg, #fff 0%, #f6fbff 100%);padding:32px 20px;border-bottom:1px solid #eee}
+    .container{max-width:1100px;margin:0 auto}
+    .brand{display:flex;gap:16px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,#ffdede,#ffe7c7);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+    nav{margin-left:auto}
+    nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-size:14px}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;padding:36px 20px}
+    .intro{background:var(--card);padding:26px;border-radius:16px;box-shadow:0 6px 18px rgba(31,41,55,0.06)}
+    .intro h2{margin:0 0 8px;font-size:28px}
+    .intro p{margin:0 0 14px;color:var(--muted)}
+    .cta{display:flex;gap:10px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-ghost{background:transparent;border:1px solid #e6eefc;color:var(--accent)}
+
+    .card{background:var(--card);padding:16px;border-radius:12px}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .gallery-item{border-radius:10px;overflow:hidden;position:relative}
+    .gallery-item img{width:100%;height:220px;object-fit:cover;display:block}
+    .tag{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,0.6);color:#fff;padding:6px 8px;border-radius:8px;font-size:12px}
+
+    section{padding:26px 20px}
+    h3{margin-top:0}
+
+    /* Clay section */
+    .clay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .about{display:flex;gap:20px;align-items:center}
+    .about img{width:220px;height:160px;object-fit:cover;border-radius:12px}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{padding:12px;border-radius:8px;border:1px solid #e6e6e6;font-size:14px}
+    textarea{min-height:120px;resize:vertical}
+
+    footer{padding:18px 20px;background:#fff;border-top:1px solid #eee;margin-top:26px}
+    .footer-flex{display:flex;align-items:center;gap:12px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+      .clay-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      .gallery-grid{grid-template-columns:1fr}
+      .brand h1{font-size:16px}
+    }
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:flex;align-items:center;justify-content:center;padding:20px;z-index:80;opacity:0;pointer-events:none;transition:opacity .18s}
+    .lightbox.show{opacity:1;pointer-events:auto}
+    .lightbox img{max-width:980px;max-height:80vh;border-radius:10px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center">
+      <div class="brand">
+        <div class="logo">AA</div>
+        <div>
+          <h1>Ashu Art Gallery</h1>
+          <p class="lead">Original handmade acrylic, watercolor & clay art by Ashu Kumari</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#gallery">Gallery</a>
+        <a href="#clay">Clay Art</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="intro card">
+        <h2>Welcome to Ashu Art Gallery</h2>
+        <p>Handmade acrylic paintings, delicate watercolors, and unique clay artworks — crafted with love. Browse originals, commission custom pieces, or message for prints.</p>
+        <div class="cta">
+          <button class="btn btn-primary" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">View Gallery</button>
+          <a class="btn btn-ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h4>Highlights</h4>
+          <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+            <li>Original acrylic & watercolor paintings</li>
+            <li>Handmade clay sculptures & wall pieces</li>
+            <li>Nationwide shipping from India</li>
+          </ul>
+          <p style="margin-top:12px;font-size:13px;color:var(--muted)">Replace these details with your shipping policies, prices, or latest collections.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="gallery">
+      <h3>Gallery — Paintings</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://picsum.photos/id/1025/800/600" alt="Artwork 1" loading="lazy"><span class="tag">Acrylic</span></div>
+        <div class="gallery-item"><img src="https://picsum.photos/id/1035/800/600" alt="Artwork 2" loading="lazy"><span class="tag">Watercolor</span></div>
+        <div class="gallery-item"><img src="https://picsum.photos/id/1040/800/600" alt="Artwork 3" loading="lazy"><span class="tag">Acrylic</span></div>
+        <div class="gallery-item"><img src="https://picsum.photos/id/1056/800/600" alt="Artwork 4" loading="lazy"><span class="tag">Watercolor</span></div>
+        <div class="gallery-item"><img src="https://picsum.photos/id/106/800/600" alt="Artwork 5" loading="lazy"><span class="tag">Acrylic</span></div>
+        <div class="gallery-item"><img src="https://picsum.photos/id/1074/800/600" alt="Artwork 6" loading="lazy"><span class="tag">Watercolor</span></div>
+      </div>
+    </section>
+
+    <section id="clay">
+      <h3>Clay Art & Sculptures</h3>
+      <div class="clay-grid">
+        <div class="card about">
+          <img src="https://picsum.photos/id/1050/640/480" alt="Clay art">
+          <div>
+            <h4>Handmade Clay Series</h4>
+            <p style="color:var(--muted)">Beautifully textured clay wall pieces and small tabletop sculptures — each piece is kiln-fired and hand-finished. Perfect as unique gifts or home accents.</p>
+            <p style="margin-top:8px;font-size:14px">Pricing starts at ₹500. Contact to request custom sizes or finishes.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <img src="https://picsum.photos/id/1080/800/400" alt="Clay 2" style="border-radius:8px;height:180px;object-fit:cover">
+            <img src="https://picsum.photos/id/1081/800/400" alt="Clay 3" style="border-radius:8px;height:180px;object-fit:cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3>Contact & Commissions</h3>
+      <div class="contact-grid">
+        <div>
+          <p style="color:var(--muted)">Want to buy a painting or commission a custom piece? Fill the form or reach out directly.</p>
+          <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <input type="text" name="subject" placeholder="Subject">
+            <textarea name="message" placeholder="Tell me about the artwork you want..."></textarea>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <p style="font-size:13px;color:var(--muted);margin-top:8px">Or email: <a href="mailto:ashu@example.com">ashu@example.com</a> — Instagram: <a href="https://instagram.com/ashuartgallery" target="_blank">@ashuartgallery</a></p>
+          </form>
+        </div>
+        <aside class="card">
+          <h4>Visit & Policies</h4>
+          <p style="color:var(--muted)">We ship across India. Payments via UPI, bank transfer, or cash on delivery (where available). Replace these details with your real policies.</p>
+          <p style="margin-top:12px">Tip: To make the form send to your email easily, sign up at Formspree and replace the <code>action="https://formspree.io/f/your-form-id"</code> with the endpoint they give you.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-flex">
+      <div>© <strong>Ashu Art Gallery</strong> — Handmade art by Ashu Kumari</div>
+      <div style="margin-left:auto;color:var(--muted);font-size:13px">Made with ❤️ • Replace placeholder content and images to personalize</div>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" onclick="hideLightbox()"><img id="lightboxImg" src="" alt=""></div>
+
+  <script>
+    // open lightbox on image click
+    document.querySelectorAll('.gallery-item img, .about img, .card img').forEach(img=>{
+      img.style.cursor='pointer';
+      img.addEventListener('click', e=>{ showLightbox(e.target.src); });
+    });
+    function showLightbox(src){
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').classList.add('show');
+    }
+    function hideLightbox(){ document.getElementById('lightbox').classList.remove('show'); }
+
+    // optional: intercept form submit to show a nice message (works with Formspree)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      // allow normal submit to Formspree; show temporary message if needed
+      setTimeout(()=>alert('Message submitted — thank you!'), 400);
+    });
+  </script>
+</body>
+</html>
